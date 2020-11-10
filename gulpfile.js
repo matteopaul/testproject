@@ -89,7 +89,7 @@ const script = () => {
                 })))
                 .pipe(sourcemaps.init())
                 .pipe(concat('concat.js'))
-                .pipe(babel())
+                .pipe(babel({presets: ["@babel/preset-env"]}))
                 .pipe(jshint())
                 .pipe(jshint.reporter('jshint-stylish'))
                 .pipe(browserify({
